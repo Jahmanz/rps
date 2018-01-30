@@ -1,0 +1,40 @@
+img {
+  width: 150px;
+  height: 150px;
+}
+
+#replay {
+  float: left;
+}
+
+#newgame {
+  float: right;
+}
+
+#nextpage {
+  float: right;
+}
+
+#fight {
+  float: right;
+}
+
+/*.page1 {
+  display: none;
+}*/
+
+/*.page2 {
+  display: none;
+
+}
+
+
+.page3 {
+  display: none;
+
+}
+
+.page4 {
+  display: none;
+
+}*/
