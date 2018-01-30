@@ -1,6 +1,28 @@
+h1 {
+  text-align: center;
+  font-family: impact;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+h2 {
+  text-align: center;
+  font-family: impact;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+
+}
 img {
   width: 150px;
   height: 150px;
+}
+
+#pvp {
+  margin-left: 225px;
+  font-size: 75px;
+
+}
+#cpu {
+  margin-left: 225px;
+  font-size: 75px;
 }
 
 #replay {
@@ -19,6 +41,9 @@ img {
   float: right;
 }
 
+.col-md-3 {
+  padding: 0;
+}
 /*.page1 {
   display: none;
 }*/
