@@ -1,3 +1,13 @@
+#player2 {
+  width: 350px;
+  height: 350px;
+}
+
+#player1 {
+  width: 350px;
+  height: 350px;
+}
+
 h1 {
   text-align: center;
   font-family: impact;
@@ -10,18 +20,41 @@ h2 {
   text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 
 }
-img {
+
+h3 {
+  text-align: center;
+}
+
+/*img {
   width: 150px;
   height: 150px;
+}*/
+
+#fighters {
+  width: 175px;
+  height: 175px;
+}
+
+#stages {
+  margin-left: 50px;
+  margin-bottom: 25px;
+  width: 250px;
+  height: 250px;
+}
+
+#fighters {
+  /*margin-bottom: 25px;*/
+  width: 250px;
+  height: 250px;
 }
 
 #pvp {
-  margin-left: 225px;
+  margin-left: 200px;
   font-size: 75px;
 
 }
 #cpu {
-  margin-left: 225px;
+  margin-left: 200px;
   font-size: 75px;
 }
 
@@ -38,28 +71,43 @@ img {
 }
 
 #fight {
-  float: right;
+  margin-left: 448px;
+  font-size: 75px;
+}
+
+.player1buttons {
+  text-align: center;
+}
+
+.player2buttons {
+  text-align: center;
 }
 
 .col-md-3 {
-  padding: 0;
+  border: solid 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
+
 /*.page1 {
   display: none;
+}
+
+.page2 {
+  display: none;
+
 }*/
 
-/*.page2 {
+
+/*.page3 {
   display: none;
 
-}
+}*/
 
-
-.page3 {
-  display: none;
-
-}
-
-.page4 {
+/*.page4 {
   display: none;
 
 }*/
