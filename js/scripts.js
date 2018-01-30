@@ -6,28 +6,39 @@ function Game(playerOneTurn, playerTwoTurn, scores, playerOne, playerTwo) {
   this.playerTwo = playerTwo;
 }
 
-Game.prototype.versus(){
-  var newGame = new Game(true, false, [0,0,0], "human", "human");
-}
-
-Game.prototype.comp(){
-  var newGame = new Game(true, false, [0,0,0], "human", "comp");
-}
-
-
-
-function changePlayer(playerOneTurn) {
-  if (playerOneTurn) {
-    playerOneTurn = false;
-    playerTwoTurn = true;
+Game.prototype.changePlayer = function(){
+  if (this.playerOneTurn === true) {
+    this.playerOneTurn = false;
+    this.playerTwoTurn = true;
   }
-  else if (playerTwoTurn) {
-    playerOneTurn = true;
-    playerTwoTurn = false;
+  else if (this.playerTwoTurn === true) {
+    this.playerOneTurn = true;
+    this.playerTwoTurn = false;
   }
 }
 
-  var selection = $(".characters").last().click(function() {
+function toStart() {
+  $(".page4").hide();
+  $(".page3").hide();
+  $(".page2").hide();
+  $(".page1").show();
+}
+
+function toChars() {
+  $(".page4").hide();
+  $(".page3").hide();
+  $(".page1").hide();
+  $(".page2").show();
+}
+
+function toStage() {
+  $(".page4").hide();
+  $(".page3").show();
+  $(".page2").hide();
+  $(".page1").hide();
+}
+
+$(".characters").last().click(function() {
 //IF PLAYING AGAINST COMPUTER
     if(this.playerOneTurn === true && newGame.playerTwo === "comp") {
     if (selection === $("#square1").val()){
@@ -62,82 +73,134 @@ function changePlayer(playerOneTurn) {
       this.playerOneChar = "Ellen";
       toStage();
     }
-    toStage();
   }
 //IF PLAYING AGAINST PLAYER
   else if(this.playerOneTurn === true && newGame.playerTwo === "human") {
     if (selection === $("#square1").val()){
       this.playerOneChar = "Arnold";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square2").val()){
       this.playerOneChar = "Batman";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square3").val()){
       this.playerOneChar = "Hillary";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square4").val()){
       this.playerOneChar = "Oprah";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square5").val()){
       this.playerOneChar = "Predator";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square6").val()){
       this.playerOneChar = "Joker";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square7").val()){
       this.playerOneChar = "Trump";
-      changePlayer();
+      newGame.changePlayer();
     }
     else if (selection === $("#square8").val()){
       this.playerOneChar = "Ellen";
-      changePlayer();
+      newGame.changePlayer();
     }
-    changePlayer();
-
+  }
+  else if(this.playerTwoTurn === true){
+    if(selection === $("#square1").val()) {
+      this.playerTwoChar = "Arnold";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square2").val()) {
+      this.playerTwoChar = "Batman";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square3").val()) {
+      this.playerTwoChar = "Hillary";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square4").val()) {
+      this.playerTwoChar = "Oprah";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square5").val()) {
+      this.playerTwoChar = "Predator";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square6").val()) {
+      this.playerTwoChar = "Joker";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square7").val()) {
+      this.playerTwoChar = "Trump";
+      newGame.changePlayer();
+      toStage();
+    }
+    if(selection === $("#square8").val()) {
+      this.playerTwoChar = "Ellen";
+      newGame.changePlayer();
+      toStage();
+    }
   }
   })
 
-function toStart() {
-  $(".page4").hide();
-  $(".page3").hide();
-  $(".page2").hide();
-  $(".page1").show();
-}
-
-function toChars() {
-  $(".page4").hide();
-  $(".page3").hide();
-  $(".page1").hide();
-  $(".page2").show();
-}
-
-function toStage() {
-  $(".page4").hide();
-  $(".page3").show();
-  $(".page2").hide();
-  $(".page1").hide();
+function getWinner(inputOne, inputTwo) {
+  if (inputOne === "rock" && inputTwo === "scissors") {
+    newGame.scores[0] += 1;
+  } else if (inputOne === "rock" && inputTwo === "paper")  {
+    newGame.scores[2] += 1;
+  } else if (inputOne === "rock" && inputTwo === "rock")  {
+    newGame.scores[1] += 1;
+  } else if (inputOne === "paper" && inputTwo === "rock") {
+    newGame.scores[0] += 1;
+  } else if (inputOne === "paper" && inputTwo === "scissors")  {
+    newGame.scores[2] += 1;
+  } else if (inputOne === "paper" && inputTwo === "paper")  {
+    newGame.scores[1] += 1;
+  } else if (inputOne === "scissors" && inputTwo === "paper") {
+    newGame.scores[0] += 1;
+  } else if (inputOne === "scissors" && inputTwo === "rock")  {
+    newGame.scores[2] += 1;
+  } else if (inputOne === "scissors" && inputTwo === "scissors")  {
+    newGame.scores[1] += 1;
+  }
 }
 
 //frontend logic
 
 $(document).ready(function () {
 
-    $("#versus").click(function () {
-    $("#computer").click(function () {
-    $(".back-to-start").click(function () {
-      toStart();
-    $(".back-to-chars").click(function () {
-      toChars();
-    $(".reset").click(function () {
-
-    $(".rock").click(function () {
-    $(".paper").click(function () {
-    $(".scissors").click(function () {
-
-    }
+  $("#pvp").click(function () {
+    var newGame = new Game(true, false, [0,0,0], "human", "human");
+    console.log(newGame);
+    toChars();
+  });
+  $("#cpu").click(function () {
+    var newGame = new Game(true, false, [0,0,0], "human", "comp");
+    console.log(newGame);
+    toChars();
+  });
+  $(".back-to-start").click(function () {
+    toStart();
+  });
+  $(".back-to-chars").click(function () {
+    toChars();
+  });
+  $(".reset").click(function () {
+  });
+  $(".rock").click(function () {
+  });
+  $(".paper").click(function () {
+  });
+  $(".scissors").click(function () {
+  });
+});
