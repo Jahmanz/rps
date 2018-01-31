@@ -54,47 +54,39 @@ Game.prototype.getWinner = function() {
   if (inputOne !== "" && inputTwo !== "") {
     if (inputOne === "rock" && inputTwo === "scissors") {
       this.scores[0] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "rock" && inputTwo === "paper")  {
       this.scores[2] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "rock" && inputTwo === "rock")  {
       this.scores[1] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
       $("#tieMessage").text("TIE! Roll again.");
     } else if (inputOne === "paper" && inputTwo === "rock") {
       this.scores[0] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "paper" && inputTwo === "scissors")  {
       this.scores[2] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "paper" && inputTwo === "paper")  {
       this.scores[1] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
       $("#tieMessage").text("TIE! Roll again.");
     } else if (inputOne === "scissors" && inputTwo === "paper") {
       this.scores[0] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "scissors" && inputTwo === "rock")  {
       this.scores[2] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
     } else if (inputOne === "scissors" && inputTwo === "scissors")  {
       this.scores[1] += 1;
-      inputOne = "";
-      inputTwo = "";
+      
       $("#tieMessage").text("TIE! Roll again.");
     }
     $("#playerOneScore").text(this.scores[0]);
     $("#playerTwoScore").text(this.scores[2]);
-
+    inputOne = "";
+    inputTwo = "";
 
 
   }
