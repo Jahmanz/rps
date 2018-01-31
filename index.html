@@ -38,6 +38,7 @@
   <button type="button" class="btn btn-primary btn-lg">Back</button>
   <div class="jumbotron jumbotron-fluid" id="jumbo2">
     <h1 class="display-3">Choose Your Fighter</h1>
+    <h3 id="charChoice"></h3>
   </div>
   </div>
 <div class="container">
@@ -103,19 +104,19 @@
   <div class="container">
   <div class="row">
   <div class="col-xs-6 col-md-4">
-  <a href="#" class="epicodus">
-    <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1880/s300/epicodus-ico.png" id="stages" alt="Epicodus"></a>
-    <h5>EPICODUS</h5>
+  <a>
+    <img class="stages" src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1880/s300/epicodus-ico.png" id="epicodus" alt="Epicodus">
+  </a>
   </div>
   <div class="col-xs-6 col-md-4">
-  <a href="#" class="jungle">
-    <img src="https://airbus-h.assetsadobe2.com/is/image/content/dam/products-and-solutions/commercial-helicopters/h130/H130-aerial-work-Corail-helicopters-2017.jpg?wid=1000" id="stages" alt="Jungle"></a>
-    <h5>JUNGLE</h5>
+  <a>
+    <img class="stages" src="https://airbus-h.assetsadobe2.com/is/image/content/dam/products-and-solutions/commercial-helicopters/h130/H130-aerial-work-Corail-helicopters-2017.jpg?wid=1000" id="jungle" alt="Jungle">
+  </a>
   </div>
   <div class="col-xs-6 col-md-4">
-  <a href="#" class="ovaloffice">
-    <img src="http://sundial.osu.edu/wordpress/wp-content/uploads/2017/10/landscape-1485117862-gettyimages-467396842.jpg" id="stages" alt="Oval Office"></a>
-    <h5>OVAL OFFICE</h5>
+  <a>
+    <img class="stages" src="http://sundial.osu.edu/wordpress/wp-content/uploads/2017/10/landscape-1485117862-gettyimages-467396842.jpg" id="oval" alt="Oval Office">
+  </a>
   </div>
   </div>
 
@@ -123,19 +124,19 @@
 
   <div class="row">
   <div class="col-xs-6 col-md-4">
-    <a href="#" class="boxingring">
-      <img src="http://www.dreams.metroeve.com/wp-content/uploads/2017/03/dreams.metroeve_boxing-ring.jpg" id="stages" alt="Boxing Ring"></a>
-      <h5>BOXING RING</h5>
+    <a>
+      <img class="stages" src="http://www.dreams.metroeve.com/wp-content/uploads/2017/03/dreams.metroeve_boxing-ring.jpg" id="boxing" alt="Boxing Ring">
+    </a>
   </div>
   <div class="col-xs-6 col-md-4">
-    <a href="#" class="oprahstage">
-      <img src="https://i.pinimg.com/originals/ba/79/b2/ba79b2d68acfc1dc458ab09001eba23d.jpg" id="stages" alt="Oprah Stage"></a>
-      <h5>STUDIO</h5>
+    <a>
+      <img class="stages" src="https://i.pinimg.com/originals/ba/79/b2/ba79b2d68acfc1dc458ab09001eba23d.jpg" id="oprahStage" alt="Oprah Stage">
+    </a>
   </div>
   <div class="col-xs-6 col-md-4">
-    <a href="#" class="arkham">
-      <img src="https://qph.ec.quoracdn.net/main-qimg-68462f851838766d194885790d32939a-c" id="stages" alt="Gotham"></a>
-      <h5>GOTHAM CITY</h5>
+    <a>
+      <img class="stages" src="http://vignette1.wikia.nocookie.net/gotham-inc/images/1/19/Jim_waiting_outside_the_Arkham_Asylum_gate.png/revision/latest?cb=20160825043727" id="arkham" alt="Arkham">
+    </a>
   </div>
   </div>
   <button type="button" id="fight" class="btn btn-danger btn-lg">Fight!</button>
@@ -157,16 +158,17 @@
       <div class="caption">
         <h3>Player1</h3>
         <div class="player1buttons">
-        <a href="#" class="btn btn-primary" role="button">rock</a><a href="#" class="btn btn-danger" role="button">Paper</a><a href="#" class="btn btn-primary" role="button">scissors</a>
+        <a href="#" id="p-one-rock" class="btn btn-primary" role="button">Rock</a><a href="#" id="p-one-paper" class="btn btn-danger" role="button">Paper</a><a href="#" id="p-one-scissors" class="btn btn-primary" role="button">Scissors</a>
         </div>
         </div>
   </div>
   <div class="col-sm-6 col-md-4">
     <div class="score">
       <div class="caption">
-        <h3>Player 1 Score</h3>
-        <h3>Player 2 Score</h3>
-        <h3>Round:</h3>
+        <h3>Player 1 Score:<span id="playerOneScore"> </span> </h3>
+        <h3>Player 2 Score:<span id="playerTwoScore"> </span> </h3>
+        <h3>Round:<span id="roundCount"> </span> </h3>
+        <h3 id="tieMessage"></h3>
       </div>
     </div>
   </div>
@@ -175,7 +177,7 @@
       <div class="caption">
         <h3>Player2</h3>
         <div class="player2buttons">
-        <a href="#" class="btn btn-primary" role="button">rock</a> <a href="#" class="btn btn-danger" role="button">Paper</a><a href="#" class="btn btn-primary" role="button">scissors</a>
+        <a href="#" id="p-two-rock" class="btn btn-primary" role="button">Rock</a> <a id="p-two-paper" class="btn btn-danger" role="button">Paper</a><a id="p-two-scissors" class="btn btn-primary" role="button">Scissors</a>
         </div>
 
       </div>

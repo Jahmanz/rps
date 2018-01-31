@@ -17,6 +17,10 @@ Game.prototype.changePlayer = function(){
   }
 }
 
+Game.prototype.charChoiceDisplay = function() {
+  $("#charChoice").text("Player 1: " + this.playerOneChar);
+}
+
 function toStart() {
   $(".page4").hide();
   $(".page3").hide();
@@ -27,8 +31,8 @@ function toStart() {
 function toChars() {
   $(".page4").hide();
   $(".page3").hide();
-  $(".page1").hide();
   $(".page2").show();
+  $(".page1").hide();
 }
 
 function toStage() {
@@ -38,40 +42,64 @@ function toStage() {
   $(".page1").hide();
 }
 
+function toFight() {
+  $(".page4").show();
+  $(".page3").hide();
+  $(".page2").hide();
+  $(".page1").hide();
+}
 
-function getWinner(inputOne, inputTwo) {
-  if (inputOne === "rock" && inputTwo === "scissors") {
-    newGame.scores[0] += 1;
-  } else if (inputOne === "rock" && inputTwo === "paper")  {
-    newGame.scores[2] += 1;
-  } else if (inputOne === "rock" && inputTwo === "rock")  {
-    newGame.scores[1] += 1;
-  } else if (inputOne === "paper" && inputTwo === "rock") {
-    newGame.scores[0] += 1;
-  } else if (inputOne === "paper" && inputTwo === "scissors")  {
-    newGame.scores[2] += 1;
-  } else if (inputOne === "paper" && inputTwo === "paper")  {
-    newGame.scores[1] += 1;
-  } else if (inputOne === "scissors" && inputTwo === "paper") {
-    newGame.scores[0] += 1;
-  } else if (inputOne === "scissors" && inputTwo === "rock")  {
-    newGame.scores[2] += 1;
-  } else if (inputOne === "scissors" && inputTwo === "scissors")  {
-    newGame.scores[1] += 1;
+
+Game.prototype.getWinner = function() {
+  if (inputOne !== "" && inputTwo !== "") {
+    if (inputOne === "rock" && inputTwo === "scissors") {
+      this.scores[0] += 1;
+      
+    } else if (inputOne === "rock" && inputTwo === "paper")  {
+      this.scores[2] += 1;
+      
+    } else if (inputOne === "rock" && inputTwo === "rock")  {
+      this.scores[1] += 1;
+      
+      $("#tieMessage").text("TIE! Roll again.");
+    } else if (inputOne === "paper" && inputTwo === "rock") {
+      this.scores[0] += 1;
+      
+    } else if (inputOne === "paper" && inputTwo === "scissors")  {
+      this.scores[2] += 1;
+      
+    } else if (inputOne === "paper" && inputTwo === "paper")  {
+      this.scores[1] += 1;
+      
+      $("#tieMessage").text("TIE! Roll again.");
+    } else if (inputOne === "scissors" && inputTwo === "paper") {
+      this.scores[0] += 1;
+      
+    } else if (inputOne === "scissors" && inputTwo === "rock")  {
+      this.scores[2] += 1;
+      
+    } else if (inputOne === "scissors" && inputTwo === "scissors")  {
+      this.scores[1] += 1;
+      
+      $("#tieMessage").text("TIE! Roll again.");
+    }
+    $("#playerOneScore").text(this.scores[0]);
+    $("#playerTwoScore").text(this.scores[2]);
+    inputOne = "";
+    inputTwo = "";
+
+
   }
 }
+var inputOne = "";
+var inputTwo = "";
 
 //frontend logic
 
-  // var selection = $(".fighters").click(function () {
-  //
-  // });
-
-
 $(document).ready(function () {
-
   var newGame = new Game(true, false, [0,0,0], "human", "comp");
-
+  toStart();
+//CHOOSE YOUR FIGHTER CLICK FUNCTION
   $(".fighters").click(function(event) {
     event.preventDefault();
     var selection = $(this)[0].id;
@@ -121,41 +149,48 @@ $(document).ready(function () {
       if (selection === "batman"){
         newGame.playerOneChar = "Batman";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
         console.log(newGame.playerTwoTurn);
       }
       else if (selection === "joker"){
         newGame.playerOneChar = "Joker";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "trump"){
         newGame.playerOneChar = "Trump";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "hillary"){
         newGame.playerOneChar = "Hillary";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "arnold"){
         newGame.playerOneChar = "Arnold";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "predator"){
         newGame.playerOneChar = "Predator";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "oprah"){
         newGame.playerOneChar = "Oprah";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
       else if (selection === "ellen"){
         newGame.playerOneChar = "Ellen";
         newGame.changePlayer();
+        newGame.charChoiceDisplay();
       }
     }
     else if(newGame.playerTwoTurn === true){
       if(selection === "batman") {
         newGame.playerTwoChar = "Batman";
-        console.log(newGame.playerTwoChar);
         newGame.changePlayer();
         toStage();
       }
@@ -196,24 +231,79 @@ $(document).ready(function () {
       }
     };
   });
+//STAGE SELECTION CLICK FUNCTION
+  $(".stages").click(function(event) {
+    event.preventDefault();
+    var selection = $(this)[0].id;
+    if (selection === "epicodus"){
+
+    }
+  });
   $("#pvp").click(function () {
     newGame.playerTwo = "human";
     console.log(newGame);
     toChars();
   });
   $("#cpu").click(function () {
+    newGame.playerTwo = "comp";
     console.log(newGame);
     toChars();
   });
+  $("#fight").click(function () {
+    toFight();
+  });
+  $("#newgame").click(function () {
+    location.reload();
+  });
+
+  $("#p-one-rock").click(function(event) {
+    event.preventDefault();
+    inputOne = "rock";
+    console.log(inputOne);
+    newGame.getWinner();
+
+  });
+  $("#p-one-paper").click(function(event) {
+    event.preventDefault();
+    inputOne = "paper";
+    console.log(inputOne);
+    newGame.getWinner();
+
+  });
+  $("#p-one-scissors").click(function(event) {
+    event.preventDefault();
+    inputOne = "scissors";
+    console.log(inputOne);
+    newGame.getWinner();
+
+  });
+  $("#p-two-rock").click(function(event) {
+    event.preventDefault();
+    inputTwo = "rock";
+    console.log(inputTwo);
+    newGame.getWinner();
+
+    console.log(newGame.scores);
+  });
+  $("#p-two-paper").click(function(event) {
+    event.preventDefault();
+    inputTwo = "paper";
+    console.log(inputTwo);
+    newGame.getWinner();
+
+  });
+  $("#p-two-scissors").click(function(event) {
+    event.preventDefault();
+    inputTwo = "scissors";
+    console.log(inputTwo);
+    newGame.getWinner();
+
+  });
+
+
 });
 
 
-//   $(".back-to-start").click(function () {
-//     toStart();
-//   });
-//   $(".back-to-chars").click(function () {
-//     toChars();
-//   });
 //   $(".reset").click(function () {
 //   });
 //   $(".rock").click(function () {
