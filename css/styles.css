@@ -1,3 +1,8 @@
+body {
+background-image: url("http://sf.co.ua/14/03/wallpaper-828488.jpg");
+}
+
+
 #player2 {
   width: 350px;
   height: 350px;
@@ -23,6 +28,7 @@ h2 {
 
 h3 {
   text-align: center;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
 /*img {
@@ -89,6 +95,55 @@ h3 {
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  box-shadow: 0px 0px 15px white;
+
+}
+.col-md-4 {
+  border: solid 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 15px white;
+}
+
+#jumbo1 {
+  border: solid 10px;
+  background-image: url("https://media1.tenor.com/images/b2a284afcda426722f679d3298566ced/tenor.gif?itemid=4954978");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 75%;
+  box-shadow: 0px 0px 15px white;
+
+}
+
+#jumbo2 {
+  border: solid 10px;
+  background-image: url("http://www.gifmania.co.uk/Sports-Animated-Gifs/Animated-Boxing/Boxing-Gloves/Gloves-Boxing-87381.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0px 0px 15px white;
+
+}
+
+#jumbo3 {
+  border: solid 10px;
+  background-image: url("https://image.dhgate.com/0x0/f2/albu/g4/M01/28/2B/rBVaEFeTY02AG8JhAAbrthW2O-w281.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 75%;
+  box-shadow: 0px 0px 15px white;
+
+}
+
+#jumbo4 {
+  border: solid 10px;
+  background-image: url("http://www.reactiongifs.com/r/14.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 75%;
+  box-shadow: 0px 0px 15px white;
 
 }
 
