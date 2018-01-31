@@ -177,7 +177,7 @@ $(document).ready(function () {
       else if(selection === "arnold") {
         newGame.playerTwoChar = "Arnold";
         newGame.changePlayer();
-        toStage();
+        toStage();``
       }
       else if(selection === "predator") {
         newGame.playerTwoChar = "Predator";
