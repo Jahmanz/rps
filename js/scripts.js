@@ -38,120 +38,6 @@ function toStage() {
   $(".page1").hide();
 }
 
-$(".characters").last().click(function() {
-//IF PLAYING AGAINST COMPUTER
-    if(this.playerOneTurn === true && newGame.playerTwo === "comp") {
-    if (selection === $("#square1").val()){
-      this.playerOneChar = "Arnold";
-      toStage();
-    }
-    else if (selection === $("#square2").val()){
-      this.playerOneChar = "Batman";
-      toStage();
-    }
-    else if (selection === $("#square3").val()){
-      this.playerOneChar = "Hillary";
-      toStage();
-    }
-    else if (selection === $("#square4").val()){
-      this.playerOneChar = "Oprah";
-      toStage();
-    }
-    else if (selection === $("#square5").val()){
-      this.playerOneChar = "Predator";
-      toStage();
-    }
-    else if (selection === $("#square6").val()){
-      this.playerOneChar = "Joker";
-      toStage();
-    }
-    else if (selection === $("#square7").val()){
-      this.playerOneChar = "Trump";
-      toStage();
-    }
-    else if (selection === $("#square8").val()){
-      this.playerOneChar = "Ellen";
-      toStage();
-    }
-  }
-//IF PLAYING AGAINST PLAYER
-  else if(this.playerOneTurn === true && newGame.playerTwo === "human") {
-    if (selection === $("#square1").val()){
-      this.playerOneChar = "Arnold";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square2").val()){
-      this.playerOneChar = "Batman";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square3").val()){
-      this.playerOneChar = "Hillary";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square4").val()){
-      this.playerOneChar = "Oprah";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square5").val()){
-      this.playerOneChar = "Predator";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square6").val()){
-      this.playerOneChar = "Joker";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square7").val()){
-      this.playerOneChar = "Trump";
-      newGame.changePlayer();
-    }
-    else if (selection === $("#square8").val()){
-      this.playerOneChar = "Ellen";
-      newGame.changePlayer();
-    }
-  }
-  else if(this.playerTwoTurn === true){
-    if(selection === $("#square1").val()) {
-      this.playerTwoChar = "Arnold";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square2").val()) {
-      this.playerTwoChar = "Batman";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square3").val()) {
-      this.playerTwoChar = "Hillary";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square4").val()) {
-      this.playerTwoChar = "Oprah";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square5").val()) {
-      this.playerTwoChar = "Predator";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square6").val()) {
-      this.playerTwoChar = "Joker";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square7").val()) {
-      this.playerTwoChar = "Trump";
-      newGame.changePlayer();
-      toStage();
-    }
-    if(selection === $("#square8").val()) {
-      this.playerTwoChar = "Ellen";
-      newGame.changePlayer();
-      toStage();
-    }
-  }
-  })
 
 function getWinner(inputOne, inputTwo) {
   if (inputOne === "rock" && inputTwo === "scissors") {
@@ -177,30 +63,163 @@ function getWinner(inputOne, inputTwo) {
 
 //frontend logic
 
+  // var selection = $(".fighters").click(function () {
+  //
+  // });
+
+
 $(document).ready(function () {
 
+  var newGame = new Game(true, false, [0,0,0], "human", "comp");
+
+  $(".fighters").click(function(event) {
+    event.preventDefault();
+    var selection = $(this)[0].id;
+    console.log(selection);
+
+  //IF PLAYING AGAINST COMPUTER
+      if(newGame.playerTwo === "comp") {
+      if (selection === "batman"){
+        newGame.playerOneChar = "Batman";
+        console.log(newGame.playerOneChar);
+        toStage();
+      }
+      else if (selection === "joker"){
+        newGame.playerOneChar = "Joker";
+        console.log(newGame.playerOneChar);
+        toStage();
+      }
+      else if (selection === "trump"){
+        newGame.playerOneChar = "Trump";
+        console.log(newGame.playerOneChar);
+        toStage();
+      }
+      else if (selection === "hillary"){
+        newGame.playerOneChar = "Hillary";
+        toStage();
+      }
+      else if (selection === "arnold"){
+        newGame.playerOneChar = "Arnold";
+        toStage();
+      }
+      else if (selection === "predator"){
+        newGame.playerOneChar = "Predator";
+        toStage();
+      }
+      else if (selection === "oprah"){
+        newGame.playerOneChar = "Oprah";
+        toStage();
+      }
+      else if (selection === "ellen"){
+        newGame.playerOneChar = "Ellen";
+        toStage();
+      }
+    }
+  //IF PLAYING AGAINST PLAYER
+    else if(newGame.playerTwo === "human" && newGame.playerOneChar === undefined) {
+
+      if (selection === "batman"){
+        newGame.playerOneChar = "Batman";
+        newGame.changePlayer();
+        console.log(newGame.playerTwoTurn);
+      }
+      else if (selection === "joker"){
+        newGame.playerOneChar = "Joker";
+        newGame.changePlayer();
+      }
+      else if (selection === "trump"){
+        newGame.playerOneChar = "Trump";
+        newGame.changePlayer();
+      }
+      else if (selection === "hillary"){
+        newGame.playerOneChar = "Hillary";
+        newGame.changePlayer();
+      }
+      else if (selection === "arnold"){
+        newGame.playerOneChar = "Arnold";
+        newGame.changePlayer();
+      }
+      else if (selection === "predator"){
+        newGame.playerOneChar = "Predator";
+        newGame.changePlayer();
+      }
+      else if (selection === "oprah"){
+        newGame.playerOneChar = "Oprah";
+        newGame.changePlayer();
+      }
+      else if (selection === "ellen"){
+        newGame.playerOneChar = "Ellen";
+        newGame.changePlayer();
+      }
+    }
+    else if(newGame.playerTwoTurn === true){
+      if(selection === "batman") {
+        newGame.playerTwoChar = "Batman";
+        console.log(newGame.playerTwoChar);
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "joker") {
+        newGame.playerTwoChar = "Joker";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "trump") {
+        newGame.playerTwoChar = "Trump";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "hillary") {
+        newGame.playerTwoChar = "Hillary";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "arnold") {
+        newGame.playerTwoChar = "Arnold";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "predator") {
+        newGame.playerTwoChar = "Predator";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "oprah") {
+        newGame.playerTwoChar = "oprah";
+        newGame.changePlayer();
+        toStage();
+      }
+      else if(selection === "ellen") {
+        newGame.playerTwoChar = "Ellen";
+        newGame.changePlayer();
+        toStage();
+      }
+    };
+  });
   $("#pvp").click(function () {
-    var newGame = new Game(true, false, [0,0,0], "human", "human");
+    newGame.playerTwo = "human";
     console.log(newGame);
     toChars();
   });
   $("#cpu").click(function () {
-    var newGame = new Game(true, false, [0,0,0], "human", "comp");
     console.log(newGame);
     toChars();
   });
-  $(".back-to-start").click(function () {
-    toStart();
-  });
-  $(".back-to-chars").click(function () {
-    toChars();
-  });
-  $(".reset").click(function () {
-  });
-  $(".rock").click(function () {
-  });
-  $(".paper").click(function () {
-  });
-  $(".scissors").click(function () {
-  });
 });
+
+
+//   $(".back-to-start").click(function () {
+//     toStart();
+//   });
+//   $(".back-to-chars").click(function () {
+//     toChars();
+//   });
+//   $(".reset").click(function () {
+//   });
+//   $(".rock").click(function () {
+//   });
+//   $(".paper").click(function () {
+//   });
+//   $(".scissors").click(function () {
+//   });
+// });
