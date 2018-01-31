@@ -2,10 +2,41 @@ body {
 background-image: url("http://sf.co.ua/14/03/wallpaper-828488.jpg");
 }
 
+.epicodus {
+  background-image: url("../img/epicodus.jpg");
+  background-size: cover;
+  background-repeat: space;
+}
+
+.jungle{
+  background-image: url("../img/jungle.jpg");
+  background-size: cover;
+}
+
+.oval {
+  background-image: url("../img/ovaloffice.jpg");
+  background-size: cover;
+}
+
+.boxing {
+  background-image: url("../img/boxingring.jpg");
+  background-size: cover;
+}
+
+.oprahStage {
+  background-image: url("../img/studio.jpg");
+  background-size: cover;
+}
+
+.arkham {
+  background-image: url("../img/gotham.jpg");
+  background-size: cover;
+}
 
 #player2 img{
   width: 350px;
   height: 350px;
+  border-radius: 15px;
 }
 
 #player1 img {
