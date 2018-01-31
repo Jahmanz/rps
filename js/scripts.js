@@ -54,33 +54,33 @@ Game.prototype.getWinner = function() {
   if (inputOne !== "" && inputTwo !== "") {
     if (inputOne === "rock" && inputTwo === "scissors") {
       this.scores[0] += 1;
-      
+
     } else if (inputOne === "rock" && inputTwo === "paper")  {
       this.scores[2] += 1;
-      
+
     } else if (inputOne === "rock" && inputTwo === "rock")  {
       this.scores[1] += 1;
-      
+
       $("#tieMessage").text("TIE! Roll again.");
     } else if (inputOne === "paper" && inputTwo === "rock") {
       this.scores[0] += 1;
-      
+
     } else if (inputOne === "paper" && inputTwo === "scissors")  {
       this.scores[2] += 1;
-      
+
     } else if (inputOne === "paper" && inputTwo === "paper")  {
       this.scores[1] += 1;
-      
+
       $("#tieMessage").text("TIE! Roll again.");
     } else if (inputOne === "scissors" && inputTwo === "paper") {
       this.scores[0] += 1;
-      
+
     } else if (inputOne === "scissors" && inputTwo === "rock")  {
       this.scores[2] += 1;
-      
+
     } else if (inputOne === "scissors" && inputTwo === "scissors")  {
       this.scores[1] += 1;
-      
+
       $("#tieMessage").text("TIE! Roll again.");
     }
     $("#playerOneScore").text(this.scores[0]);
@@ -150,83 +150,100 @@ $(document).ready(function () {
         newGame.playerOneChar = "Batman";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" />');
         console.log(newGame.playerTwoTurn);
       }
       else if (selection === "joker"){
         newGame.playerOneChar = "Joker";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" />');
       }
       else if (selection === "trump"){
         newGame.playerOneChar = "Trump";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="https://cdn.cnn.com/cnnnext/dam/assets/161107120239-01-trump-parry-super-169.jpg" />');
       }
       else if (selection === "hillary"){
         newGame.playerOneChar = "Hillary";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="http://c6.nrostatic.com/sites/default/files/styles/original_image_with_cropping/public/uploaded/why-hell-hillary-clinton-comparing-herself-wonder-woman.jpg" />');
       }
       else if (selection === "arnold"){
         newGame.playerOneChar = "Arnold";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="http://www.dreadcentral.com/wp-content/uploads/2015/07/pred.jpg" />');
       }
       else if (selection === "predator"){
         newGame.playerOneChar = "Predator";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="https://www.sideshowtoy.com/wp-content/uploads/2013/03/350x350-hottoys-Predator.jpg" />');
       }
       else if (selection === "oprah"){
         newGame.playerOneChar = "Oprah";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="https://ewedit.files.wordpress.com/2015/01/oprah_l-24.jpg" />');
       }
       else if (selection === "ellen"){
         newGame.playerOneChar = "Ellen";
         newGame.changePlayer();
         newGame.charChoiceDisplay();
+        $("#player1").html('<img id="batmanImage" src="http://media.breitbart.com/media/2017/05/EllenDeGeneresTrumpNotWelcome-640x480.jpg" />');
       }
     }
     else if(newGame.playerTwoTurn === true){
       if(selection === "batman") {
         newGame.playerTwoChar = "Batman";
         newGame.changePlayer();
+        $("#player2").html('<img id="batmanImage" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" />');
         toStage();
       }
       else if(selection === "joker") {
         newGame.playerTwoChar = "Joker";
         newGame.changePlayer();
+        $("#player2").html('<img src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" />');
         toStage();
       }
       else if(selection === "trump") {
         newGame.playerTwoChar = "Trump";
         newGame.changePlayer();
+        $("#player2").html('<img src="https://cdn.cnn.com/cnnnext/dam/assets/161107120239-01-trump-parry-super-169.jpg" />');
+
         toStage();
       }
       else if(selection === "hillary") {
         newGame.playerTwoChar = "Hillary";
         newGame.changePlayer();
+        $("#player2").html('<img src="http://c6.nrostatic.com/sites/default/files/styles/original_image_with_cropping/public/uploaded/why-hell-hillary-clinton-comparing-herself-wonder-woman.jpg" />');
         toStage();
       }
       else if(selection === "arnold") {
         newGame.playerTwoChar = "Arnold";
         newGame.changePlayer();
+        $("#player2").html('<img src="http://www.dreadcentral.com/wp-content/uploads/2015/07/pred.jpg" />');
         toStage();``
       }
       else if(selection === "predator") {
         newGame.playerTwoChar = "Predator";
         newGame.changePlayer();
+        $("#player2").html('<img src="https://www.sideshowtoy.com/wp-content/uploads/2013/03/350x350-hottoys-Predator.jpg" />');
         toStage();
       }
       else if(selection === "oprah") {
         newGame.playerTwoChar = "oprah";
         newGame.changePlayer();
+        $("#player2").html('<img src="https://ewedit.files.wordpress.com/2015/01/oprah_l-24.jpg" />');
         toStage();
       }
       else if(selection === "ellen") {
         newGame.playerTwoChar = "Ellen";
         newGame.changePlayer();
+        $("#player2").html('<img src="http://media.breitbart.com/media/2017/05/EllenDeGeneresTrumpNotWelcome-640x480.jpg" />');
         toStage();
       }
     };

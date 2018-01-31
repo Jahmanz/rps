@@ -3,15 +3,19 @@ background-image: url("http://sf.co.ua/14/03/wallpaper-828488.jpg");
 }
 
 
-#player2 {
+#player2 img{
   width: 350px;
   height: 350px;
 }
 
-#player1 {
+#player1 img {
   width: 350px;
   height: 350px;
 }
+/*#batmanImage{
+  width: 350px;
+  height: 350px;
+}*/
 
 h1 {
   text-align: center;
