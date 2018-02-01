@@ -1,3 +1,4 @@
+//BACK E
 function Game(playerOneTurn, playerTwoTurn, scores, playerOne, playerTwo) {
   this.playerOneTurn = playerOneTurn;
   this.playerTwoTurn = playerTwoTurn;
@@ -21,6 +22,7 @@ Game.prototype.charChoiceDisplay = function() {
   $("#charChoice").text("Player 1: " + this.playerOneChar);
 }
 
+//PAGE NAVIGATION FUNCTIONS
 function toStart() {
   $(".page4").hide();
   $(".page3").hide();
@@ -48,7 +50,6 @@ function toFight() {
   $(".page2").hide();
   $(".page1").hide();
 }
-
 
 Game.prototype.getWinner = function() {
   if (inputOne !== "" && inputTwo !== "") {
@@ -78,14 +79,12 @@ Game.prototype.getWinner = function() {
     $("#playerTwoScore").text(this.scores[2]);
     inputOne = "";
     inputTwo = "";
-
-
   }
 }
 var inputOne = "";
 var inputTwo = "";
 
-//frontend logic
+//FRONT END LOGIC
 
 $(document).ready(function () {
   var newGame = new Game(true, false, [0,0,0], "human", "comp");
@@ -100,21 +99,18 @@ $(document).ready(function () {
       if(newGame.playerTwo === "comp") {
       if (selection === "batman"){
         newGame.playerOneChar = "Batman";
-        console.log(newGame.playerOneChar);
         $("#player1").html('<img id="batmanImage" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" />');
         $("#player2").html('<img id="terminatorImage" src="https://www.sideshowtoy.com/wp-content/uploads/2016/02/terminator-genisys-endoskeleton-sixth-scale-hot-toys-thumb-902662.jpg" />');
         toStage();
       }
       else if (selection === "joker"){
         newGame.playerOneChar = "Joker";
-        console.log(newGame.playerOneChar);
         $("#player1").html('<img id="batmanImage" src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" />');
         $("#player2").html('<img id="terminatorImage" src="https://www.sideshowtoy.com/wp-content/uploads/2016/02/terminator-genisys-endoskeleton-sixth-scale-hot-toys-thumb-902662.jpg" />');
         toStage();
       }
       else if (selection === "trump"){
         newGame.playerOneChar = "Trump";
-        console.log(newGame.playerOneChar);
         $("#player1").html('<img id="batmanImage" src="https://cdn.cnn.com/cnnnext/dam/assets/161107120239-01-trump-parry-super-169.jpg" />');
         $("#player2").html('<img id="terminatorImage" src="https://www.sideshowtoy.com/wp-content/uploads/2016/02/terminator-genisys-endoskeleton-sixth-scale-hot-toys-thumb-902662.jpg" />');
         toStage();
@@ -158,7 +154,6 @@ $(document).ready(function () {
         newGame.changePlayer();
         newGame.charChoiceDisplay();
         $("#player1").html('<img id="batmanImage" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" />');
-        console.log(newGame.playerTwoTurn);
       }
       else if (selection === "joker"){
         newGame.playerOneChar = "Joker";
@@ -284,14 +279,15 @@ $(document).ready(function () {
       $("body").addClass("arkham");
     }
   });
+
+//PVP OR VS CPU CLICK FUNCTIONS
+
   $("#pvp").click(function () {
     newGame.playerTwo = "human";
-    console.log(newGame);
     toChars();
   });
   $("#cpu").click(function () {
     newGame.playerTwo = "comp";
-    console.log(newGame);
     toChars();
   });
   $("#fight").click(function () {
@@ -301,11 +297,10 @@ $(document).ready(function () {
     location.reload();
   });
 
+//KEYPRESS FUNCTIONS
+
   $(document).keypress(function(e) {
-    // console.log(e);
-    // if (e.originalEvent.keyCode == 100) {
-    //   alert("HTE D KEY!");
-    // }
+    console.log(e);
     if(e.originalEvent.keyCode == 113) {
       $("#p-one-rock").click();
     }
@@ -324,9 +319,9 @@ $(document).ready(function () {
     else if(e.originalEvent.keyCode == 112) {
       $("#p-two-scissors").click();
     }
-
   });
 
+//PLAYER ONE ROCK BUTTON
   $("#p-one-rock").click(function(event) {
     event.preventDefault();
     $("#tieMessage").text("");
@@ -343,10 +338,10 @@ $(document).ready(function () {
         inputTwo = "scissors";
       }
     }
-    console.log(inputTwo);
     newGame.getWinner();
-
   });
+
+  //PLAYER ONE PAPER BUTTON
   $("#p-one-paper").click(function(event) {
     event.preventDefault();
     inputOne = "paper";
@@ -363,10 +358,10 @@ $(document).ready(function () {
         inputTwo = "scissors";
       }
     }
-    console.log(inputTwo);
     newGame.getWinner();
-
   });
+
+  //PLAYER ONE SCISSORS BUTTON
   $("#p-one-scissors").click(function(event) {
     event.preventDefault();
     inputOne = "scissors";
@@ -383,33 +378,27 @@ $(document).ready(function () {
         inputTwo = "scissors";
       }
     }
-    console.log(inputTwo);
     newGame.getWinner();
-
   });
+
+  //PLAYER TWO BUTTONS
   $("#p-two-rock").click(function(event) {
     event.preventDefault();
     inputTwo = "rock";
-    console.log(inputTwo);
     newGame.getWinner();
-
-    console.log(newGame.scores);
   });
   $("#p-two-paper").click(function(event) {
     event.preventDefault();
     inputTwo = "paper";
-    console.log(inputTwo);
     newGame.getWinner();
-
   });
   $("#p-two-scissors").click(function(event) {
     event.preventDefault();
     inputTwo = "scissors";
-    console.log(inputTwo);
     newGame.getWinner();
-
   });
 
+//REPLAY BUTTON
   $("#replay").click(function () {
     newGame.scores = [0, 0, 0];
     $("#playerOneScore").text("");
@@ -417,13 +406,17 @@ $(document).ready(function () {
     $("#tieMessage").text("");
   });
 
+//PAGE 2 BACK BUTTON
+
+$("#p2back").click(function () {
+  location.reload();
+  });
+
+$("#p3back").click(function () {
+  location.reload();
+  });
+
+
+
+
 });
-
-
-//   $(".rock").click(function () {
-//   });
-//   $(".paper").click(function () {
-//   });
-//   $(".scissors").click(function () {
-//   });
-// });

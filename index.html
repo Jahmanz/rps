@@ -7,191 +7,193 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.2.1.js"></script>
   <script src="js/scripts.js"></script>
-</head>
-<body>
+  <audio autoplay>
+    <source src="audio/terminator.mp3" type="audio/mpeg">
+    </audio>
+  </head>
+  <body>
 
-<!-- page1-start -->
-<div class="page1">
-  <div class="container">
-  <div class="jumbotron jumbotron-fluid" id="jumbo1">
-  <h1 class="display-3">Rock Paper Scissors</h1>
-  <h2 class="lead">STREET FIGHTER EDITION</h2>
-  </div>
-  </div>
-
-<div class="container">
-<div class="row">
-  <div class="col-md-6">
-    <button type="button" id="pvp" class="btn btn-primary btn-lg">PvP</button>
-  </div>
-  <div class="col-md-6">
-    <button type="button" id="cpu" class="btn btn-danger btn-lg">CPU</button>
-  </div>
-</div>
-</div>
-</div>
-<!-- page1-end -->
-
-<!-- page2-start -->
-<div class="page2">
-  <div class="container">
-  <button type="button" class="btn btn-primary btn-lg">Back</button>
-  <div class="jumbotron jumbotron-fluid" id="jumbo2">
-    <h1 class="display-3">Choose Your Fighter</h1>
-    <h3 id="charChoice"></h3>
-  </div>
-  </div>
-<div class="container">
-  <div class="row">
-<div class="col-xs-6 col-md-3">
-
-    <img id="batman" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" value="batman" class="fighters" alt="batman">
-<h5>BATMAN</h5>
-</div>
-<div class="col-xs-6 col-md-3">
-
-    <img id="joker" src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" value = "joker" class="fighters" alt="joker">
-<h5>JOKER</h5>
-</div>
-<div class="col-xs-6 col-md-3">
-
-    <img id="trump" src="https://cdn.cnn.com/cnnnext/dam/assets/161107120239-01-trump-parry-super-169.jpg" value = "trump" class="fighters" alt="trump">
-<h5>TRUMP</h5>
-</div>
-<div class="col-xs-6 col-md-3">
-
-    <img id="hillary" src="http://c6.nrostatic.com/sites/default/files/styles/original_image_with_cropping/public/uploaded/why-hell-hillary-clinton-comparing-herself-wonder-woman.jpg" value="hillary" class="fighters" alt="hillary">
-<h5>HILLARY</h5>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-
-      <img id="arnold"  src="http://www.dreadcentral.com/wp-content/uploads/2015/07/pred.jpg" value="arnold" class="fighters" alt="arnold">
-  <h5>SCHWARZENEGGER</h5>
-  </div>
-  <div class="col-xs-6 col-md-3">
-
-      <img id="predator" src="https://www.sideshowtoy.com/wp-content/uploads/2013/03/350x350-hottoys-Predator.jpg" value="predator" class="fighters" alt="predator">
-  <h5>PREDATOR</h5>
-  </div>
-  <div class="col-xs-6 col-md-3">
-
-      <img id="oprah" src="https://ewedit.files.wordpress.com/2015/01/oprah_l-24.jpg" value="oprah" class="fighters" alt="oprah">
-  <h5>OPRAH</h5>
-  </div>
-  <div class="col-xs-6 col-md-3">
-
-      <img id="ellen" src="http://media.breitbart.com/media/2017/05/EllenDeGeneresTrumpNotWelcome-640x480.jpg" value="ellen" class="fighters" alt="ellen">
-  <h5>ELLEN</h5>
-  </div>
-
+    <!-- page1-start -->
+    <div class="page1">
+      <div class="container">
+        <div class="jumbotron jumbotron-fluid" id="jumbo1">
+          <h1 class="display-3">Rock Paper Scissors</h1>
+          <h2 class="lead">STREET FIGHTER EDITION</h2>
+        </div>
       </div>
-      <button type="button" id="nextpage" class="btn btn-primary btn-lg">Next</button>
-  </div>
-</div>
-<!-- page2-end -->
 
-<!-- page3-start -->
-<div class="page3">
-  <div class="container">
-  <button type="button" class="btn btn-primary btn-lg">Back</button>
-  <div class="jumbotron jumbotron-fluid" id="jumbo3">
-    <h1 class="display-3">Choose Your Stage</h1>
-  </div>
-</div>
-  <div class="container">
-  <div class="row">
-  <div class="col-xs-6 col-md-4">
-  <a>
-    <img class="stages" src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1880/s300/epicodus-ico.png" id="epicodus" alt="Epicodus">
-  </a>
-  </div>
-  <div class="col-xs-6 col-md-4">
-  <a>
-    <img class="stages" src="https://airbus-h.assetsadobe2.com/is/image/content/dam/products-and-solutions/commercial-helicopters/h130/H130-aerial-work-Corail-helicopters-2017.jpg?wid=1000" id="jungle" alt="Jungle">
-  </a>
-  </div>
-  <div class="col-xs-6 col-md-4">
-  <a>
-    <img class="stages" src="http://sundial.osu.edu/wordpress/wp-content/uploads/2017/10/landscape-1485117862-gettyimages-467396842.jpg" id="oval" alt="Oval Office">
-  </a>
-  </div>
-  </div>
-
-  <br>
-
-  <div class="row">
-  <div class="col-xs-6 col-md-4">
-    <a>
-      <img class="stages" src="http://www.dreams.metroeve.com/wp-content/uploads/2017/03/dreams.metroeve_boxing-ring.jpg" id="boxing" alt="Boxing Ring">
-    </a>
-  </div>
-  <div class="col-xs-6 col-md-4">
-    <a>
-      <img class="stages" src="https://i.pinimg.com/originals/ba/79/b2/ba79b2d68acfc1dc458ab09001eba23d.jpg" id="oprahStage" alt="Oprah Stage">
-    </a>
-  </div>
-  <div class="col-xs-6 col-md-4">
-    <a>
-      <img class="stages" src="http://vignette1.wikia.nocookie.net/gotham-inc/images/1/19/Jim_waiting_outside_the_Arkham_Asylum_gate.png/revision/latest?cb=20160825043727" id="arkham" alt="Arkham">
-    </a>
-  </div>
-  </div>
-  <button type="button" id="fight" class="btn btn-danger btn-lg">Fight!</button>
-  </div>
-  </div>
-<!-- page3-end -->
-
-<!-- page4-start -->
-<div class="page4">
-  <div class="container">
-  <div class="jumbotron jumbotron-fluid" id="jumbo4">
-    <h1 class="display-3">FIGHT!</h1>
-</div>
-</div>
-<div class="container">
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-      <span id="player1"> </span>
-      <!-- <img src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" alt="player 1"> -->
-      <div class="caption">
-        <h3>Player1</h3>
-        <div class="player1buttons">
-        <a href="#" id="p-one-rock" class="btn btn-primary" role="button">Rock</a><a href="#" id="p-one-paper" class="btn btn-danger" role="button">Paper</a><a href="#" id="p-one-scissors" class="btn btn-primary" role="button">Scissors</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" id="pvp" class="btn btn-primary btn-lg">PvP</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" id="cpu" class="btn btn-danger btn-lg">CPU</button>
+          </div>
         </div>
+      </div>
+    </div>
+    <!-- page1-end -->
+
+    <!-- page2-start -->
+    <div class="page2">
+      <div class="container">
+        <button type="button" id="p2back" class="btn btn-primary btn-lg">Back</button>
+        <div class="jumbotron jumbotron-fluid" id="jumbo2">
+          <h1 class="display-3">Choose Your Fighter</h1>
         </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <div class="score">
-      <div class="caption">
-        <h3>Player 1 Score:<span id="playerOneScore"> </span> </h3>
-        <h3>Player 2 Score:<span id="playerTwoScore"> </span> </h3>
-        <h3>Round:<span id="roundCount"> </span> </h3>
-        <h3 id="tieMessage"></h3>
+        <h3 id="charChoice"></h3>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+
+            <img id="batman" src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" value="batman" class="fighters" alt="batman">
+            <h5>BATMAN</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="joker" src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" value = "joker" class="fighters" alt="joker">
+            <h5>JOKER</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="trump" src="https://cdn.cnn.com/cnnnext/dam/assets/161107120239-01-trump-parry-super-169.jpg" value = "trump" class="fighters" alt="trump">
+            <h5>TRUMP</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="hillary" src="http://c6.nrostatic.com/sites/default/files/styles/original_image_with_cropping/public/uploaded/why-hell-hillary-clinton-comparing-herself-wonder-woman.jpg" value="hillary" class="fighters" alt="hillary">
+            <h5>HILLARY</h5>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+
+            <img id="arnold"  src="http://www.dreadcentral.com/wp-content/uploads/2015/07/pred.jpg" value="arnold" class="fighters" alt="arnold">
+            <h5>SCHWARZENEGGER</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="predator" src="https://www.sideshowtoy.com/wp-content/uploads/2013/03/350x350-hottoys-Predator.jpg" value="predator" class="fighters" alt="predator">
+            <h5>PREDATOR</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="oprah" src="https://ewedit.files.wordpress.com/2015/01/oprah_l-24.jpg" value="oprah" class="fighters" alt="oprah">
+            <h5>OPRAH</h5>
+          </div>
+          <div class="col-xs-6 col-md-3">
+
+            <img id="ellen" src="http://media.breitbart.com/media/2017/05/EllenDeGeneresTrumpNotWelcome-640x480.jpg" value="ellen" class="fighters" alt="ellen">
+            <h5>ELLEN</h5>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- page2-end -->
+
+    <!-- page3-start -->
+    <div class="page3">
+      <div class="container">
+        <button type="button" id="p3back" class="btn btn-primary btn-lg">Back</button>
+        <div class="jumbotron jumbotron-fluid" id="jumbo3">
+          <h1 class="display-3">Choose Your Stage</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1880/s300/epicodus-ico.png" id="epicodus" alt="Epicodus">
+            </a>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="https://airbus-h.assetsadobe2.com/is/image/content/dam/products-and-solutions/commercial-helicopters/h130/H130-aerial-work-Corail-helicopters-2017.jpg?wid=1000" id="jungle" alt="Jungle">
+            </a>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="http://sundial.osu.edu/wordpress/wp-content/uploads/2017/10/landscape-1485117862-gettyimages-467396842.jpg" id="oval" alt="Oval Office">
+            </a>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="http://www.dreams.metroeve.com/wp-content/uploads/2017/03/dreams.metroeve_boxing-ring.jpg" id="boxing" alt="Boxing Ring">
+            </a>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="https://i.pinimg.com/originals/ba/79/b2/ba79b2d68acfc1dc458ab09001eba23d.jpg" id="oprahStage" alt="Oprah Stage">
+            </a>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <a>
+              <img class="stages" src="http://vignette1.wikia.nocookie.net/gotham-inc/images/1/19/Jim_waiting_outside_the_Arkham_Asylum_gate.png/revision/latest?cb=20160825043727" id="arkham" alt="Arkham">
+            </a>
+          </div>
+        </div>
+        <button type="button" id="fight" class="btn btn-danger btn-lg">Fight!</button>
+      </div>
+    </div>
+    <!-- page3-end -->
+
+    <!-- page4-start -->
+    <div class="page4">
+      <div class="container">
+        <div class="jumbotron jumbotron-fluid" id="jumbo4">
+          <h1 class="display-3">FIGHT!</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <span id="player1"> </span>
+            <!-- <img src="http://cdn3.darkhorizons.com/wp-content/uploads/2017/07/reeves-the-batman-will-begin-an-arc.jpg" alt="player 1"> -->
+            <div class="caption">
+              <h3>Player1</h3>
+              <div class="player1buttons">
+                <a href="#" id="p-one-rock" class="btn btn-primary" role="button">Rock</a><a href="#" id="p-one-paper" class="btn btn-danger" role="button">Paper</a><a href="#" id="p-one-scissors" class="btn btn-primary" role="button">Scissors</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="score">
+              <div class="caption">
+                <h3>Player 1 Score:<span id="playerOneScore"> </span> </h3>
+                <h3>Player 2 Score:<span id="playerTwoScore"> </span> </h3>
+                <h3>Round:<span id="roundCount"> </span> </h3>
+                <h3 id="tieMessage"></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <span id="player2"></span>
+            <!-- <img src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" alt="player 2"> -->
+            <div class="caption">
+              <h3>Player2</h3>
+              <div class="player2buttons">
+                <a href="#" id="p-two-rock" class="btn btn-primary" role="button">Rock</a> <a id="p-two-paper" class="btn btn-danger" role="button">Paper</a><a id="p-two-scissors" class="btn btn-primary" role="button">Scissors</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <button type="button" id="replay" class="btn btn-primary btn-lg">Replay</button><button type="button" id="newgame" class="btn btn-primary btn-lg">New Game</button>
       </div>
     </div>
   </div>
-  <div class="col-sm-6 col-md-4">
-    <span id="player2"></span>
-      <!-- <img src="https://vignette.wikia.nocookie.net/batman/images/2/22/The_Joker_smile.jpg" alt="player 2"> -->
-      <div class="caption">
-        <h3>Player2</h3>
-        <div class="player2buttons">
-        <a href="#" id="p-two-rock" class="btn btn-primary" role="button">Rock</a> <a id="p-two-paper" class="btn btn-danger" role="button">Paper</a><a id="p-two-scissors" class="btn btn-primary" role="button">Scissors</a>
-        </div>
-
-      </div>
-  </div>
-</div>
-</div>
-<br>
-<div class="container">
-  <button type="button" id="replay" class="btn btn-primary btn-lg">Replay</button><button type="button" id="newgame" class="btn btn-primary btn-lg">New Game</button>
-</div>
-</div>
-</div>
 
 </body>
 </html>

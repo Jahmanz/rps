@@ -42,11 +42,8 @@ background-image: url("http://sf.co.ua/14/03/wallpaper-828488.jpg");
 #player1 img {
   width: 350px;
   height: 350px;
+  border-radius: 15px;
 }
-/*#batmanImage{
-  width: 350px;
-  height: 350px;
-}*/
 
 h1 {
   text-align: center;
@@ -91,6 +88,7 @@ h5  {
   /*margin-bottom: 25px;*/
   width: 250px;
   height: 250px;
+  border-radius: 15px;
 }
 
 #pvp {
