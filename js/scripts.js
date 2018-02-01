@@ -44,11 +44,15 @@ function toStage() {
   $(".page1").hide();
 }
 
-function toFight() {
+Game.prototype.toFight =function() {
   $(".page4").show();
   $(".page3").hide();
   $(".page2").hide();
   $(".page1").hide();
+  $("#playerOneName").text(this.playerOneChar + "'s" + " " + "Score:");
+  $("#playerTwoName").text(this.playerTwoChar + "'s" + " " + "Score:");
+  $("#playerOneIconName").text(this.playerOneChar);
+  $("#playerTwoIconName").text(this.playerTwoChar);
 }
 
 Game.prototype.getWinner = function() {
@@ -77,12 +81,24 @@ Game.prototype.getWinner = function() {
     }
     $("#playerOneScore").text(this.scores[0]);
     $("#playerTwoScore").text(this.scores[2]);
+    this.Victory();
     inputOne = "";
     inputTwo = "";
   }
 }
 var inputOne = "";
 var inputTwo = "";
+
+Game.prototype.Victory = function() {
+  if (this.scores[0] >= 10) {
+    alert(this.playerOneChar + " " + "WINS!!");
+    $("#replay").click();
+  }
+  else if (this.scores[2] >= 10) {
+    alert(this.playerTwoChar + " " + "WINS!!");
+    $("#replay").click();
+  }
+}
 
 //FRONT END LOGIC
 
@@ -237,7 +253,7 @@ $(document).ready(function () {
         toStage();
       }
       else if(selection === "oprah") {
-        newGame.playerTwoChar = "oprah";
+        newGame.playerTwoChar = "Oprah";
         newGame.changePlayer();
         $("#player2").html('<img src="https://ewedit.files.wordpress.com/2015/01/oprah_l-24.jpg" />');
         toStage();
@@ -291,7 +307,7 @@ $(document).ready(function () {
     toChars();
   });
   $("#fight").click(function () {
-    toFight();
+    newGame.toFight();
   });
   $("#newgame").click(function () {
     location.reload();
@@ -300,7 +316,6 @@ $(document).ready(function () {
 //KEYPRESS FUNCTIONS
 
   $(document).keypress(function(e) {
-    console.log(e);
     if(e.originalEvent.keyCode == 113) {
       $("#p-one-rock").click();
     }
